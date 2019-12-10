@@ -1,3 +1,29 @@
+<?php
+require_once('koneksi.php');
+if (isset($_POST) & !empty($_POST)) {
+  $foto_karyawan = $_POST['foto'];
+  $nama = $_POST['nama'];
+  $alamat = $_POST['alamat'];
+  $umur = $_POST['umur'];
+  $kelamin= $_POST['gender'];
+  $gaji = $_POST['gaji'];
+  $jabatan = $_POST['jabatan'];
+  $jumlah_anak= $_POST['umur'];
+
+
+
+
+
+  $res = $database->create($foto_karyawan,$nama,$alamat,$umur,$kelamin,$gaji,$jabatan,$jumlah_anak);
+  if ($res) {
+    echo "data berhasil di simpan";
+  }else{
+    echo "data gagal";
+  }
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -94,7 +120,7 @@
                                 <!-- FOTO KARYAWAB -->
                                 <div class="form-group">
                                     <label for="foto"><b>Upload Foto</b></label>
-                                    <input type="file" class="form-control-file" id="foto">
+                                    <input type="file" name="foto" class="form-control-file" id="foto">
                                 </div>
                                 <!-- NAMA -->
                                 <div class="form-group">
