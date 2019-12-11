@@ -1,3 +1,37 @@
+<?php
+require_once('koneksi.php');
+
+if(isset($_POST) & !empty($_POST))
+{
+    $id = $_POST['id'];
+    $foto = $_POST['foto'];
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $umur = $_POST['umur'];
+    $gaji = $_POST['gaji'];
+    $kelamin = $_POST['gender'];
+    $jabatan = $_POST['jabatan'];
+    $anak = $_POST['anak'];
+
+
+    $res = $database->create($id,$foto,$nama,$alamat,$umur,$gaji,$kelamin,$jabatan,$anak);
+    if($res){
+        echo '<script> alert("DATA UPDATE"); </script>';
+        header("location:show.php");
+    }else{
+        echo '<script> alert("DATA FAILED"); </script>';
+    }
+}
+
+
+
+?>
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -91,10 +125,11 @@
                     <div class="modal-body">
                         <div class="row justify-content-center">
                             <div class="col-12">
+                                <input type="hidden" name="id">
                                 <!-- FOTO KARYAWAB -->
                                 <div class="form-group">
                                     <label for="foto"><b>Upload Foto</b></label>
-                                    <input type="file" class="form-control-file" id="foto">
+                                    <input type="file" name="foto" class="form-control-file" id="foto">
                                 </div>
                                 <!-- NAMA -->
                                 <div class="form-group">
@@ -138,7 +173,7 @@
                                 <!-- Jumlah anak -->
                                 <div class="form-group">
                                     <label for="input1"><b>Jumlah Anak</b></label>
-                                    <select name="umur" class="form-control">
+                                    <select name="anak" class="form-control">
                                         <option>Jumlah Anak</option>
                                         <option value="0">Belum Ada</option>
                                         <option value="1">1</option>
