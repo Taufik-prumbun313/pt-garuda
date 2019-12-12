@@ -44,12 +44,33 @@
 
     <body>
 
+        <!-- HEADER -->
+        <div class="header">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                <div class="mx-auto"></div>
+                <img src="img/logoGA-2x.png" alt="">
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <div class="mx-auto"></div>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-        <div class="table container-fluid ">
+
+
+
+        <div class="table container-fluid">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body shadow-lg">
                     <table class="table">
-                        <thead class="thead-dark">
+                        <thead class="thead-light">
                             <tr class="text-center">
                                 <th scope="col">No.</th>
                                 <th scope="col">Foto</th>
@@ -209,6 +230,8 @@
                     </table>
                 </div>
             </div>
+            <br>
+
             <a href="index.php" class="btn btn-primary" type="button" value="kembali">Kembali Halaman Depan</a>
         </div>
 

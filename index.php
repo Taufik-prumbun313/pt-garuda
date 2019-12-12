@@ -1,8 +1,7 @@
 <?php
 require_once('koneksi.php');
 
-if(isset($_POST) & !empty($_POST))
-{
+if (isset($_POST) & !empty($_POST)) {
     $id = $_POST['id'];
     $foto = $_POST['foto'];
     $nama = $_POST['nama'];
@@ -14,11 +13,11 @@ if(isset($_POST) & !empty($_POST))
     $anak = $_POST['anak'];
 
 
-    $res = $database->create($id,$foto,$nama,$alamat,$umur,$gaji,$kelamin,$jabatan,$anak);
-    if($res){
+    $res = $database->create($id, $foto, $nama, $alamat, $umur, $gaji, $kelamin, $jabatan, $anak);
+    if ($res) {
         echo '<script> alert("DATA UPDATE"); </script>';
         header("location:show.php");
-    }else{
+    } else {
         echo '<script> alert("DATA FAILED"); </script>';
     }
 }
@@ -75,6 +74,9 @@ if(isset($_POST) & !empty($_POST))
                     <li class="nav-item">
                         <!-- LINK trigger modal -->
                         <a class="nav-link" href="#daftarModal" data-toggle="modal" data-target="#daftarModal">Daftar Karyawan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="show.php">Daftar Pegawai <span class="sr-only"></span></a>
                     </li>
                 </ul>
             </div>
